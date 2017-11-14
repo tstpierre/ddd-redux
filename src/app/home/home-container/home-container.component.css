@@ -1,0 +1,10 @@
+.example-grid {
+    cursor: pointer;
+
+    transition: background-color 0.5s ease-in-out;
+    background-color: lightgrey;
+}
+
+.example-grid:hover {
+    background-color: silver;
+}

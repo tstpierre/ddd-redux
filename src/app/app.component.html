@@ -1,0 +1,17 @@
+<mat-toolbar>
+    <span>{{ title }}</span>
+</mat-toolbar>
+
+<mat-card>
+    <mat-card-title>
+        <nav>
+            <button mat-button routerLink='/home'>Home</button>
+        </nav>
+    </mat-card-title>
+    <mat-card-content>
+        <router-outlet></router-outlet>
+        
+        <!-- <counter-control></counter-control>
+        <counter-display></counter-display> -->
+    </mat-card-content>
+</mat-card>
