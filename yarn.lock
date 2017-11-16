@@ -26,6 +26,12 @@
     minimist "^1.2.0"
     rxjs "^5.4.2"
 
+"@angular-redux/form@^6.6.0":
+  version "6.6.0"
+  resolved "https://registry.yarnpkg.com/@angular-redux/form/-/form-6.6.0.tgz#8b958748142188342071ece7740b6ba24c5b9a5a"
+  dependencies:
+    immutable "^3.8.1"
+
 "@angular-redux/router@^6.3.1":
   version "6.3.1"
   resolved "https://registry.yarnpkg.com/@angular-redux/router/-/router-6.3.1.tgz#847f790b3e3b2d1c8bdad4d4bf3068cd4e0fbf07"
@@ -2490,6 +2496,10 @@ img-stats@^0.5.2:
   resolved "https://registry.yarnpkg.com/img-stats/-/img-stats-0.5.2.tgz#c203496c42f2d9eb2e5ab8232fa756bab32c9e2b"
   dependencies:
     xmldom "^0.1.19"
+
+immutable@^3.8.1:
+  version "3.8.2"
+  resolved "https://registry.yarnpkg.com/immutable/-/immutable-3.8.2.tgz#c2439951455bb39913daf281376f1530e104adf3"
 
 in-publish@^2.0.0:
   version "2.0.0"

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-
 import { NgRedux, dispatch } from '@angular-redux/store';
+
 import { CounterActions } from '../counter.actions';
 import { ICounterState } from '../counter.reducer';
 
@@ -10,8 +10,6 @@ import { ICounterState } from '../counter.reducer';
     styleUrls: ['./counter-control.component.css']
 })
 export class CounterControlComponent {
-
-    count: number;
 
     constructor(private ngRedux: NgRedux<ICounterState>, private actions: CounterActions) { }
 

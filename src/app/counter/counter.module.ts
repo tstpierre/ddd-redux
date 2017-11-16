@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 
 import { CounterActions } from './counter.actions';
-import { CounterContainerComponent } from './counter.container';
+import { CounterContainerComponent } from './counter-container/counter-container.component';
 import { CounterControlComponent } from './counter-control/counter-control.component';
 import { CounterDisplayComponent } from './counter-display/counter-display.component';
 

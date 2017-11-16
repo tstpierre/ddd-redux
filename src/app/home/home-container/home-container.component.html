@@ -1,8 +1,8 @@
 <mat-grid-list cols="2" rowHeight="2:1">
-    <mat-grid-tile (click)="launchCounterExample()" class="example-grid">
-        Counter Example
+    <mat-grid-tile (click)="launch('counter')" class="example-grid">
+        <mat-icon>format_list_numbered</mat-icon>Counter Example
     </mat-grid-tile>
-    <mat-grid-tile class="example-grid">
-        Todo Example
+    <mat-grid-tile (click)="launch('todo')" class="example-grid">
+        <mat-icon>check_box</mat-icon>Todo Example
     </mat-grid-tile>
 </mat-grid-list>

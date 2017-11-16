@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { NgRedux, select } from '@angular-redux/store';
 import { CounterActions } from '../counter.actions';
@@ -18,6 +18,6 @@ export class CounterDisplayComponent {
 
     constructor(private ngRedux: NgRedux<ICounterState>, private actions: CounterActions) {
 
-        //this.count$ = ngRedux.select<number>(['counter', 'count']);
+        //this.count$ = ngRedux.select<number>(['counter', 'count']); // @select wraps all this for us
     }
 }
