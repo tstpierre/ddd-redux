@@ -14,16 +14,20 @@ export function createCounterReducer() {
     return function counterReducer(lastState: ICounterState = INITIAL_STATE, action: Action): ICounterState {
 
         switch (action.type) {
-        
+
             case CounterActions.INCREMENT:
                 return {
                     count: lastState.count + 1
                 };
 
             case CounterActions.DECREMENT:
-                return {
+                return Object.assign({}, lastState, {   // the technically correct way
                     count: lastState.count - 1
-                };
+                });
+
+                // return {
+                //     count: lastState.count - 1
+                // };
         }
 
         return lastState;
