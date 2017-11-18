@@ -12,11 +12,7 @@ export interface ITodoState {
 }
 
 export const INITIAL_STATE: ITodoState = {
-    todos: [
-        { id: 0, complete: false, description: 'Test 1' },
-        { id: 1, complete: false, description: 'Test 2 - long horrible text' },
-        { id: 3, complete: true, description: 'Test 3' }
-    ]
+    todos: []
 };
 
 let _nextId = 4;
@@ -27,12 +23,15 @@ export function createTodoReducer() {
 
         switch (action.type) {
 
+            case TodoActions.LOADED:
+                return loadedTodos(lastState, action);
+
             case TodoActions.ADD:
                 return addTodo(lastState, action);
 
             case TodoActions.DELETE:
                 return deleteTodo(lastState, action);
-            
+
             case TodoActions.TOGGLE_COMPLETE:
                 return toggleTodo(lastState, action);
         }
@@ -42,6 +41,16 @@ export function createTodoReducer() {
 }
 
 // Example of a refactored 'case reducer'
+function loadedTodos(lastState: ITodoState, action: TodoAction) {
+
+    // Since we're tracking nextId locally cuz we have no database in the demo...
+    _nextId = Math.max.apply(action.payload.todos.map((t) => { return t.id; }));
+
+    return Object.assign({}, lastState, {
+        todos: action.payload.todos
+    });
+}
+
 function addTodo(lastState: ITodoState, action: TodoAction) {
 
     return Object.assign({}, lastState, {

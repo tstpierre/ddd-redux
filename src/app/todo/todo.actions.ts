@@ -9,9 +9,20 @@ export interface TodoAction extends Action {
 
 @Injectable()
 export class TodoActions {
+    static LOADED = "TODO_DATA_LOADED";
+
     static ADD = 'TODO_ADD';
     static DELETE = 'TODO_DELETE';
     static TOGGLE_COMPLETE = 'TODO_TOGGLE_COMPLETE';
+
+    loaded = (todos: Array<ITodo>): TodoAction => {
+        return {
+            type: TodoActions.LOADED,
+            payload: {
+                todos
+            }
+        };
+    }
 
     add = (description: string): TodoAction => {
         return {

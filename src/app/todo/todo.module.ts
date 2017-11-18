@@ -13,6 +13,7 @@ import { TodoActions } from './todo.actions';
 import { TodoContainerComponent } from './todo-container/todo-container.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { TodoFormComponent } from './todo-form/todo-form.component';
+import { TodoService } from './services/todo.service';
 
 @NgModule({
     imports: [
@@ -27,6 +28,6 @@ import { TodoFormComponent } from './todo-form/todo-form.component';
         MatInputModule
     ],
     declarations: [TodoContainerComponent, TodoListComponent, TodoFormComponent],
-    providers: [TodoActions]
+    providers: [TodoActions, TodoService]
 })
 export class TodoModule { }
