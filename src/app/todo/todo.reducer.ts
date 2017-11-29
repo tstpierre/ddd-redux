@@ -1,5 +1,6 @@
 import { Action } from 'redux';
 import { TodoActions, TodoAction } from './todo.actions';
+import { debug } from 'util';
 
 export interface ITodo {
     id: number;
@@ -15,7 +16,7 @@ export const INITIAL_STATE: ITodoState = {
     todos: []
 };
 
-let _nextId = 4;
+let _nextId = 0;
 
 export function createTodoReducer() {
 
@@ -44,7 +45,14 @@ export function createTodoReducer() {
 function loadedTodos(lastState: ITodoState, action: TodoAction) {
 
     // Since we're tracking nextId locally cuz we have no database in the demo...
-    _nextId = Math.max.apply(action.payload.todos.map((t) => { return t.id; }));
+    let ids: Array<number> = action.payload.todos.map((t) => t.id);
+
+    ids.forEach(i => {
+        if (i > _nextId) {
+            _nextId = i + 1;
+        }
+    });
+    // end no db hack
 
     return Object.assign({}, lastState, {
         todos: action.payload.todos

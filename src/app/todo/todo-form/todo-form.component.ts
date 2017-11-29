@@ -22,6 +22,8 @@ export class TodoFormComponent {
 
     addTodo(formModel: NgForm) {
 
+        if(!formModel.valid) return;
+
         // this service could return a promise that on
         // resolve can reset form, or on catch can do
         // any error hanlding

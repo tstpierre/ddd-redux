@@ -11,7 +11,8 @@ Reducers should remain syncronous.  So you certainly should not be making an API
 ```
 //angular service ommitted, must inject ngRedux to the service so it has the store and dispatch capability
 
-loadCats(): void {  // you could return a promise to do some UI spinner/loading UX instead
+loadCats(): void {  // you could add a loading: boolean to the state container
+                    // to do some UI spinner/loading UX
 
     let self = this;
 

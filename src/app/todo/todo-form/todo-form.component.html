@@ -3,7 +3,7 @@
     <form #todoForm="ngForm">
 
         <mat-form-field>
-            <input matInput type="text" placeholder="Description" name="description" ngControl ngModel />
+            <input matInput required type="text" placeholder="Description" name="description" ngControl ngModel />
         </mat-form-field>
 
         <button mat-button color="primary" (click)="addTodo(todoForm)">Add</button>
